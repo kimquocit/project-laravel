@@ -236,6 +236,9 @@ function animate(options) {
 	);
 }
 
+
+
+
 $(function() {
 	var $itemActions = $(".item-actions-dropdown");
 

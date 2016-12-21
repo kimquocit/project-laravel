@@ -6,7 +6,7 @@
 		<div class="title-block">
 			<div class="row">
 				<div class="col-md-6">
-			<h3 class="title"> Catalog <a href="item-editor.html" class="btn btn-primary btn-sm rounded-s"> Add New </a><!--
+			<h3 class="title"> Catalog <a href="admin/catalog/add" class="btn btn-primary btn-sm rounded-s"> Add New </a><!--
 			-->
 			<div class="action dropdown">
 				<button class="btn  btn-sm rounded-s btn-secondary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> More actions... </button>
@@ -57,18 +57,18 @@
 							<input type="checkbox" class="checkbox">
 							<span></span> </label>
 						</div>
-						<div class="item-col fixed item-col-img md"> <a href="item-editor.html">
+						<div class="item-col fixed item-col-img md">
 							<div class="item-img rounded" style="background-image: url(https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg)"></div>
-						</a> </div>
+						</div>
 						<div class="item-col fixed pull-left item-col-title">
 							<div class="item-heading">Name</div>
-							<div> <a href="item-editor.html" class="">
+							<div>
 								<h4 class="item-title"> <% ct.name %></h4>
-							</a> </div>
+							</div>
 						</div>
 						<div class="item-col item-col-date">
 							<div class="item-heading">Published</div>
-							<div class="no-overflow"> 21 SEP 10:45 </div>
+							<div class="no-overflow"> <% ct.created_at %> </div>
 						</div>
 						<div class="item-col fixed item-col-actions-dropdown">
 							<div class="item-actions-dropdown"> <a class="item-actions-toggle-btn"> <span class="inactive"> <i class="fa fa-cog"></i> </span> <span class="active"> <i class="fa fa-chevron-circle-right"></i> </span> </a>

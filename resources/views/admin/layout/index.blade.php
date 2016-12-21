@@ -44,11 +44,11 @@
           <div class="color-secondary"></div>
       </div>
   </div>
-  <script src="admin_asset/js/angular.min.js"></script>
-  <script src="admin_asset/js/vendor.js"></script> 
-  <script src="admin_asset/js/app.js"></script>
-  <script src="admin_asset/js/app/app.js"></script>
-  <script src="admin_asset/js/app/controllers/catalogController.js"></script>
+  <script type="text/javascript" src="admin_asset/js/vendor.js"></script> 
+  <script type="text/javascript" src="admin_asset/js/app.js"></script>
+  <script type="text/javascript" src="admin_asset/js/app/angular.min.js"></script>
+  <script type="text/javascript" src="admin_asset/js/app/app.js"></script>
+  <script type="text/javascript" src="admin_asset/js/app/controllers/catalogController.js"></script>
   @yield('script')
 </body>
 </html>

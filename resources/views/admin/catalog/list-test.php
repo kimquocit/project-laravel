@@ -1,11 +1,9 @@
 <html>
 <body ng-app="my-app">
+<%'Hello, World!'%>
 <div ng-controller="catalogController">
-<ul>
-	<li ng-repeat="ct in catalogs">
-		{{ ct.name }}
-	</li>
-</ul>
+<p><% hoten %></p>
+<p ng-repeat="ct in catalogs"><% ct.name %></p>
 </div>
 
 

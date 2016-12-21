@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\catalog;
+use DateTime;
 
 class catalogController extends Controller
 {
@@ -16,6 +17,19 @@ class catalogController extends Controller
     }
 
     public function showList () {
-    	return view('admin.catalog.list-test');
+    	return view('admin.catalog.list');
+    }
+
+    public function getAdd() {
+    	return view('admin.catalog.add');
+    }
+
+    public function postAdd(request $request) {
+    	$catalog = new catalog;
+    	$catalog->name = $request->name;
+    	$catalog->created_at = new DateTime();
+    	$catalog->save();
+    	return redirect('admin/catalog/add')->with('message','Add Success');
+
     }
 }

@@ -1,6 +1,6 @@
 app.controller('catalogController' ,function ($scope,$http,API) {
-	$http.get(API + 'admin/catalog/getlist').success(function (response) {
-		$scope.catalogs = response;
+	$http.get(API + 'admin/catalog/getlist').then(function (response) {
+		$scope.catalogs = response.data;
 	});
 
 	$scope.modal = function (state,id) {

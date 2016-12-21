@@ -24,6 +24,7 @@ Route::group(['prefix' => 'admin'], function(){
 		Route::get('list','catalogController@showList');
 		Route::get('getlist','catalogController@getList');
 		Route::get('add','catalogController@getAdd');
+		Route::post('add','catalogController@postAdd');
 		Route::get('edit','catalogController@getEdit');
 		Route::get('delete','catalogController@getDelete');
 	});
