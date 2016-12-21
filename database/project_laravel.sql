@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 19, 2016 at 10:07 AM
+-- Generation Time: Dec 21, 2016 at 10:26 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -79,32 +79,42 @@ CREATE TABLE IF NOT EXISTS `catalog` (
   `meta_desc` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `meta_key` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `parent_id` int(11) NOT NULL DEFAULT '0',
-  `sort_order` tinyint(4) NOT NULL DEFAULT '0'
-) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  `sort_order` tinyint(4) NOT NULL DEFAULT '0',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `catalog`
 --
 
-INSERT INTO `catalog` (`id`, `name`, `site_title`, `meta_desc`, `meta_key`, `parent_id`, `sort_order`) VALUES
-(1, 'Laptop', '', '', '', 0, 0),
-(2, 'Điện thoại', '', '', '', 0, 1),
-(3, 'Tivi', '', '', '', 0, 2),
-(4, ' Acer', '', '', '', 1, 0),
-(5, ' Apple', '', '', '', 1, 1),
-(6, 'Asus', '', '', '', 1, 2),
-(7, 'Dell', '', '', '', 1, 3),
-(8, 'HP', '', '', '', 1, 5),
-(9, 'Apple', '', '', '', 2, 0),
-(10, 'Asus', '', '', '', 2, 1),
-(11, 'BlackBerry', '', '', '', 2, 3),
-(12, 'HTC', '', '', '', 2, 4),
-(13, 'AKAI', '', '', '', 3, 0),
-(14, 'JVC', '', '', '', 3, 1),
-(15, 'LG', '', '', '', 3, 2),
-(16, 'Panasonic', '', '', '', 3, 3),
-(17, 'Samsung', '', '', '', 3, 5),
-(18, 'Toshiba', '', '', '', 3, 6);
+INSERT INTO `catalog` (`id`, `name`, `site_title`, `meta_desc`, `meta_key`, `parent_id`, `sort_order`, `created_at`, `updated_at`) VALUES
+(1, 'Laptop', '', '', '', 0, 0, '2016-12-21 03:52:04', '0000-00-00 00:00:00'),
+(2, 'Điện thoại', '', '', '', 0, 1, '2016-12-21 03:52:04', '0000-00-00 00:00:00'),
+(3, 'Tivi', '', '', '', 0, 2, '2016-12-21 03:52:04', '0000-00-00 00:00:00'),
+(4, ' Acer', '', '', '', 1, 0, '2016-12-21 03:52:04', '0000-00-00 00:00:00'),
+(5, ' Apple', '', '', '', 1, 1, '2016-12-21 03:52:04', '0000-00-00 00:00:00'),
+(6, 'Asus', '', '', '', 1, 2, '2016-12-21 03:52:04', '0000-00-00 00:00:00'),
+(7, 'Dell', '', '', '', 1, 3, '2016-12-21 03:52:04', '0000-00-00 00:00:00'),
+(8, 'HP', '', '', '', 1, 5, '2016-12-21 03:52:04', '0000-00-00 00:00:00'),
+(9, 'Apple', '', '', '', 2, 0, '2016-12-21 03:52:04', '0000-00-00 00:00:00'),
+(10, 'Asus', '', '', '', 2, 1, '2016-12-21 03:52:04', '0000-00-00 00:00:00'),
+(11, 'BlackBerry', '', '', '', 2, 3, '2016-12-21 03:52:04', '0000-00-00 00:00:00'),
+(12, 'HTC', '', '', '', 2, 4, '2016-12-21 03:52:04', '0000-00-00 00:00:00'),
+(13, 'AKAI', '', '', '', 3, 0, '2016-12-21 03:52:04', '0000-00-00 00:00:00'),
+(14, 'JVC', '', '', '', 3, 1, '2016-12-21 03:52:04', '0000-00-00 00:00:00'),
+(15, 'LG', '', '', '', 3, 2, '2016-12-21 03:52:04', '0000-00-00 00:00:00'),
+(16, 'Panasonic', '', '', '', 3, 3, '2016-12-21 03:52:04', '0000-00-00 00:00:00'),
+(17, 'Samsung', '', '', '', 3, 5, '2016-12-21 03:52:04', '0000-00-00 00:00:00'),
+(18, 'Toshiba', '', '', '', 3, 6, '2016-12-21 03:52:04', '0000-00-00 00:00:00'),
+(19, 'werwer', '', '', '', 0, 0, '2016-12-20 20:52:48', '2016-12-20 20:52:48'),
+(20, 'qwqwqw', '', '', '', 0, 0, '2016-12-20 20:53:40', '2016-12-20 20:53:40'),
+(21, 'etret', '', '', '', 0, 0, '2016-12-20 20:54:03', '2016-12-20 20:54:03'),
+(22, 'Asanzo', '', '', '', 0, 0, '2016-12-20 20:56:52', '2016-12-20 20:56:52'),
+(23, 'Panasonic', '', '', '', 0, 0, '2016-12-20 21:07:17', '2016-12-20 21:07:17'),
+(24, 'Panasonic', '', '', '', 0, 0, '2016-12-20 21:08:16', '2016-12-20 21:08:16'),
+(25, 'Panasonic', '', '', '', 0, 0, '2016-12-20 21:08:40', '2016-12-20 21:08:40'),
+(26, 'Xaomi', '', '', '', 0, 0, '2016-12-20 21:08:59', '2016-12-20 21:08:59');
 
 -- --------------------------------------------------------
 
@@ -672,7 +682,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT for table `catalog`
 --
 ALTER TABLE `catalog`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=19;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=27;
 --
 -- AUTO_INCREMENT for table `comment`
 --
