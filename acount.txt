@@ -1,0 +1,5 @@
+﻿DB: jennysho_db
+
+User: jennysho_user
+
+Pass: jennysho_pass
