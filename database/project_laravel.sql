@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 21, 2016 at 10:26 AM
+-- Generation Time: Dec 23, 2016 at 10:44 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `catalog` (
   `sort_order` tinyint(4) NOT NULL DEFAULT '0',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
-) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=29 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `catalog`
@@ -93,8 +93,8 @@ INSERT INTO `catalog` (`id`, `name`, `site_title`, `meta_desc`, `meta_key`, `par
 (2, 'Điện thoại', '', '', '', 0, 1, '2016-12-21 03:52:04', '0000-00-00 00:00:00'),
 (3, 'Tivi', '', '', '', 0, 2, '2016-12-21 03:52:04', '0000-00-00 00:00:00'),
 (4, ' Acer', '', '', '', 1, 0, '2016-12-21 03:52:04', '0000-00-00 00:00:00'),
-(5, ' Apple', '', '', '', 1, 1, '2016-12-21 03:52:04', '0000-00-00 00:00:00'),
-(6, 'Asus', '', '', '', 1, 2, '2016-12-21 03:52:04', '0000-00-00 00:00:00'),
+(5, ' Apple10', '', '', '', 1, 1, '2016-12-23 07:55:54', '2016-12-23 00:55:54'),
+(6, 'Asus2', '', '', '', 1, 2, '2016-12-23 07:51:42', '2016-12-23 00:51:42'),
 (7, 'Dell', '', '', '', 1, 3, '2016-12-21 03:52:04', '0000-00-00 00:00:00'),
 (8, 'HP', '', '', '', 1, 5, '2016-12-21 03:52:04', '0000-00-00 00:00:00'),
 (9, 'Apple', '', '', '', 2, 0, '2016-12-21 03:52:04', '0000-00-00 00:00:00'),
@@ -107,11 +107,8 @@ INSERT INTO `catalog` (`id`, `name`, `site_title`, `meta_desc`, `meta_key`, `par
 (16, 'Panasonic', '', '', '', 3, 3, '2016-12-21 03:52:04', '0000-00-00 00:00:00'),
 (17, 'Samsung', '', '', '', 3, 5, '2016-12-21 03:52:04', '0000-00-00 00:00:00'),
 (18, 'Toshiba', '', '', '', 3, 6, '2016-12-21 03:52:04', '0000-00-00 00:00:00'),
-(19, 'werwer', '', '', '', 0, 0, '2016-12-20 20:52:48', '2016-12-20 20:52:48'),
-(20, 'qwqwqw', '', '', '', 0, 0, '2016-12-20 20:53:40', '2016-12-20 20:53:40'),
-(21, 'etret', '', '', '', 0, 0, '2016-12-20 20:54:03', '2016-12-20 20:54:03'),
 (22, 'Asanzo', '', '', '', 0, 0, '2016-12-20 20:56:52', '2016-12-20 20:56:52'),
-(23, 'Panasonic', '', '', '', 0, 0, '2016-12-20 21:07:17', '2016-12-20 21:07:17'),
+(28, 'BomPhone2', '', '', '', 0, 0, '2016-12-23 08:06:54', '2016-12-23 01:06:54'),
 (24, 'Panasonic', '', '', '', 0, 0, '2016-12-20 21:08:16', '2016-12-20 21:08:16'),
 (25, 'Panasonic', '', '', '', 0, 0, '2016-12-20 21:08:40', '2016-12-20 21:08:40'),
 (26, 'Xaomi', '', '', '', 0, 0, '2016-12-20 21:08:59', '2016-12-20 21:08:59');
@@ -682,7 +679,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT for table `catalog`
 --
 ALTER TABLE `catalog`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=27;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=29;
 --
 -- AUTO_INCREMENT for table `comment`
 --
