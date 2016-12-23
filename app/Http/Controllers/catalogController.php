@@ -32,4 +32,28 @@ class catalogController extends Controller
     	return redirect('admin/catalog/add')->with('message','Add Success');
 
     }
+
+    public function getEdit ($id) {
+    	$catalog = catalog::find($id);
+    	return view('admin.catalog.edit',['catalog'=>$catalog]);
+    	
+    }
+
+    public function postEdit(request $request, $id)
+    {
+    	$catalog = catalog::find($id);
+    	$catalog->name = $request->name;
+    	$catalog->updated_at = new DateTime();
+    	$catalog->save();
+    	return redirect('admin/catalog/edit/'.$id)->with('message','Edit Success');
+    }
+
+    public function getDelete($id)
+    {
+    	$catalog = catalog::find($id);
+    	$catalog->delete();
+    	return view('admin.catalog.list')->with('message','Delete Success');
+
+    }
+
 }

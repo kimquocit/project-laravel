@@ -25,8 +25,9 @@ Route::group(['prefix' => 'admin'], function(){
 		Route::get('getlist','catalogController@getList');
 		Route::get('add','catalogController@getAdd');
 		Route::post('add','catalogController@postAdd');
-		Route::get('edit','catalogController@getEdit');
-		Route::get('delete','catalogController@getDelete');
+		Route::get('edit/{id}','catalogController@getEdit');
+		Route::post('edit/{id}','catalogController@postEdit');
+		Route::get('delete/{id}','catalogController@getDelete');
 	});
 
 	Route::group(['prefix' => 'product'], function(){
