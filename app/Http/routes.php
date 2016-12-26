@@ -31,10 +31,13 @@ Route::group(['prefix' => 'admin'], function(){
 	});
 
 	Route::group(['prefix' => 'product'], function(){
+		//Route::get('list','productController@showList');
 		Route::get('list','productController@getList');
 		Route::get('add','productController@getAdd');
-		Route::get('edit','productController@getEdit');
-		Route::get('delete','productController@getDelete');
+		Route::post('add','productController@postAdd');
+		Route::get('edit/{id}','productController@getEdit');
+		Route::post('edit/{id}','productController@postEdit');
+		Route::get('delete/{id}','productController@getDelete');
 	});
 
 });
