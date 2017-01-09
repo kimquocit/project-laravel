@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 26, 2016 at 10:00 AM
+-- Generation Time: Jan 09, 2017 at 10:18 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
   `password` varchar(32) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `name` varchar(128) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `admin_group_id` int(64) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `admin`
@@ -41,7 +41,8 @@ CREATE TABLE IF NOT EXISTS `admin` (
 
 INSERT INTO `admin` (`id`, `username`, `password`, `name`, `admin_group_id`) VALUES
 (1, 'admin', '96e79218965eb72c92a549dd5a330112', 'Kim Quoc', 1),
-(7, 'admincp', '96e79218965eb72c92a549dd5a330112', 'Mod', 2);
+(7, 'admincp', '96e79218965eb72c92a549dd5a330112', 'Mod', 2),
+(10, 'fsdf', '$2y$10$rvSIWm1r4lh5FPnJRJrlZux03', 'fsdf', 1);
 
 -- --------------------------------------------------------
 
@@ -241,6 +242,26 @@ CREATE TABLE IF NOT EXISTS `menu` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `migrations`
+--
+
+DROP TABLE IF EXISTS `migrations`;
+CREATE TABLE IF NOT EXISTS `migrations` (
+  `migration` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `migrations`
+--
+
+INSERT INTO `migrations` (`migration`, `batch`) VALUES
+('2014_10_12_000000_create_users_table', 1),
+('2014_10_12_100000_create_password_resets_table', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `news`
 --
 
@@ -337,6 +358,19 @@ INSERT INTO `partner` (`id`, `name`, `image_name`, `image_link`, `link`, `info`,
 (2, 'partner2', '', 'services_logo__2.jpg', 'https://www.google.com.vn/', '', 2),
 (3, 'partner3', '', 'services_logo__3.jpg', 'https://www.google.com.vn/', '', 3),
 (4, 'partner4', '', 'services_logo__4.jpg', 'https://www.google.com.vn/', '', 4);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `password_resets`
+--
+
+DROP TABLE IF EXISTS `password_resets`;
+CREATE TABLE IF NOT EXISTS `password_resets` (
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -498,14 +532,40 @@ CREATE TABLE IF NOT EXISTS `user` (
   `address` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
   `created` int(11) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `name`, `email`, `phone`, `address`, `password`, `created`) VALUES
-(19, 'Kim Quoc', 'kimquoc88@gmail.com', '1245454545', 'Sai gon', '3acf6ebe1fabf36037c70233da2ebe95', 0);
+(19, 'Kim Quoc', 'kimquoc88@gmail.com', '1245454545', 'Sai gon', '3acf6ebe1fabf36037c70233da2ebe95', 0),
+(20, 'kimquoc', 'kimquoc@gmail.com', '', '', '123', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+`id` int(10) unsigned NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'kimquoc', 'kimquoc@gmail.com', '$2y$10$Ik.7SCRuGQihVqUECHfnc.VSvhejaEGmoq2EMbmoslI0qyesnw28u', 'VBnSO610zHMqPaV6Ml0kjWjhwmH83mh1Cyt0N9d2FzUwDo8IhCiEdUa3WogI', NULL, NULL),
+(3, 'Mr Tran', 'abc@gmail.com', '$2y$10$OG9QWdabwlgJlXB7nC3NjeQNlcj4vBtOPXWkcnk9RhTAq1Mil7Y36', 'gXbUhpVdclhdAdrc0ijAwrNcPsUiqJ53f8qy8TC4ur1mHK9HZYYqvMjrp2pb', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -627,6 +687,12 @@ ALTER TABLE `partner`
  ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `password_resets`
+--
+ALTER TABLE `password_resets`
+ ADD KEY `password_resets_email_index` (`email`), ADD KEY `password_resets_token_index` (`token`);
+
+--
 -- Indexes for table `product`
 --
 ALTER TABLE `product`
@@ -657,6 +723,12 @@ ALTER TABLE `user`
  ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+ ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `users_email_unique` (`email`);
+
+--
 -- Indexes for table `video`
 --
 ALTER TABLE `video`
@@ -670,7 +742,7 @@ ALTER TABLE `video`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `admin_group`
 --
@@ -750,7 +822,12 @@ MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=26;
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-MODIFY `id` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
+MODIFY `id` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `video`
 --
