@@ -8,4 +8,6 @@ class comment extends Model
 {
     //
     protected $table = "comment";
+
+    public $timestamps = false;
 }

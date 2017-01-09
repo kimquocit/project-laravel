@@ -15,9 +15,23 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix' => 'admin'], function(){
+
+Route::get('admin/login','userController@getLogin');
+Route::post('admin/login','userController@postLogin');
+Route::get('admin/logout','userController@getLogout');
+
+Route::group(['prefix' => 'admin','middleware'=>'adminLogin'], function(){
 	Route::get('home', function () {
     	return view('admin.layout.home');
+	});
+
+	Route::group(['prefix' => 'user'], function() {
+		Route::get('list','userController@getList');
+		Route::get('add','userController@getAdd');
+		Route::post('add','userController@postAdd');
+		Route::get('edit/{id}','userController@getEdit');
+		Route::post('edit/{id}','userController@postEdit');
+		Route::get('delete/{id}','userController@getDelete');
 	});
 
 	Route::group(['prefix' => 'catalog'], function(){

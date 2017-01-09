@@ -8,10 +8,18 @@
 				<nav class="menu">
 									<ul class="nav metismenu" id="sidebar-menu">
 						<li class="active"> <a href="index.html"> <i class="fa fa-home"></i> Dashboard </a> </li>
-						<li> <a href=""> <i class="fa fa-th-large"></i> Items Manager <i class="fa arrow"></i> </a>
+						<li> <a href=""> <i class="fa fa-th-large"></i> Product <i class="fa arrow"></i> </a>
 											<ul>
-								<li> <a href="items-list.html"> Items List </a> </li>
-								<li> <a href="item-editor.html"> Item Editor </a> </li>
+								<li> <a href="admin/catalog/list/"> Catalogs </a> </li>
+								<li> <a href="admin/product/list/"> Products </a> </li>
+							</ul>
+										</li>
+
+
+										<li> <a href=""> <i class="fa fa-th-large"></i> User <i class="fa arrow"></i> </a>
+											<ul>
+								<li> <a href="admin/user/list/"> User </a> </li>
+								
 							</ul>
 										</li>
 						<li> <a href=""> <i class="fa fa-bar-chart"></i> Charts <i class="fa arrow"></i> </a>

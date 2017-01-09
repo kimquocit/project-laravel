@@ -48,13 +48,15 @@
 							</footer>
 										</div>
 					</li>
+					@if(isset($user_login))
 									<li class="profile dropdown"> <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
 										<div class="img" style="background-image: url('https://avatars3.githubusercontent.com/u/3959008?v=3&s=40')"> </div>
-										<span class="name"> John Doe </span> </a>
+										<span class="name"> {{ $user_login->name }} </span> </a>
 						<div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1"> <a class="dropdown-item" href="#"> <i class="fa fa-user icon"></i> Profile </a> <a class="dropdown-item" href="#"> <i class="fa fa-bell icon"></i> Notifications </a> <a class="dropdown-item" href="#"> <i class="fa fa-gear icon"></i> Settings </a>
 											<div class="dropdown-divider"></div>
-											<a class="dropdown-item" href="login.html"> <i class="fa fa-power-off icon"></i> Logout </a> </div>
+											<a class="dropdown-item" href="admin/logout"> <i class="fa fa-power-off icon"></i> Logout </a> </div>
 					</li>
+					@endif
 								</ul>
 			</div>
 						</header>
